@@ -9,11 +9,11 @@ branches:
 env:
   matrix:
     - JOB=unit
-    - JOB=e2e TEST_TARGET=jqlite
-    - JOB=e2e TEST_TARGET=jquery
+    # - JOB=e2e TEST_TARGET=jqlite
+    # - JOB=e2e TEST_TARGET=jquery
   global:
-    - SAUCE_USERNAME=angular-ci
-    - SAUCE_ACCESS_KEY=9b988f434ff8-fbca-8aa4-4ae3-35442987
+    - BROWSER_STACK_USERNAME=VojtaJina
+    - BROWSER_STACK_ACCESS_KEY=ve8DdEwSkBpXWpZ1JQCQ
     - LOGS_DIR=/tmp/angular-build/logs
     - BROWSER_PROVIDER_READY_FILE=/tmp/sauce-connect-ready
 
@@ -28,10 +28,10 @@ install:
 
 before_script:
   - mkdir -p $LOGS_DIR
-  - ./lib/sauce/sauce_connect_setup.sh
+  # - ./lib/sauce/sauce_connect_setup.sh
   - npm install -g grunt-cli
   - grunt package
-  - ./scripts/travis/wait_for_browser_provider.sh
+  # - ./scripts/travis/wait_for_browser_provider.sh
 
 script:
   - ./scripts/travis/build.sh

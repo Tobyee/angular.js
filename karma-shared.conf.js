@@ -114,11 +114,11 @@ module.exports = function(config, specificOptions) {
     var buildLabel = 'TRAVIS #' + process.env.TRAVIS_BUILD_NUMBER + ' (' + process.env.TRAVIS_BUILD_ID + ')';
 
     config.logLevel = config.LOG_DEBUG;
-    config.transports = ['websocket', 'xhr-polling'];
+    // config.transports = ['websocket', 'xhr-polling'];
     config.captureTimeout = 0; // rely on SL timeout
 
     config.browserStack.build = buildLabel;
-    config.browserStack.startTunnel = false;
+    // config.browserStack.startTunnel = false;
 
     config.sauceLabs.build = buildLabel;
     config.sauceLabs.startConnect = false;
